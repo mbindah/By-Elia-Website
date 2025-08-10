@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop By Elia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/pinnk.png">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1606857521015-7e07f10c42b6');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .overlay {
+      background-color: rgba(255, 240, 245, 0.95);
+      padding: 50px 20px;
+      border-radius: 20px;
+      margin-top: 30px;
+    }
+    .product-card img {
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .btn-primary,
+    .btn-success,
+    .btn-outline-primary,
+    .btn-danger {
+      background-color: #ff69b4 !important;
+      border-color: #ff69b4 !important;
+      color: white !important;
+    }
+    .btn:hover {
+      background-color: #ff1493 !important;
+      border-color: #ff1493 !important;
+      color: white !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Toast -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1100">
+  <div id="cart-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">Item added to cart 🎉</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="images/pinnk.png" alt="BY ELIA Logo" style="height: 40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center">
+      <button id="cart-btn" class="btn btn-outline-primary position-relative me-3">
+        Cart 🛒<span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container overlay">
+  <h2 class="text-center mb-4">Jewelry that loves you back..</h2>
+  <div class="row">
+
+    <!-- PRODUCT TEMPLATE -->
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr4.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Opal Pendant</h6>
+        <p class="card-text">Ksh 1500</p>
+        <p class="description d-none">Delicate opal gemstone in a minimal pendant style.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr5.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Semi-circle Dangling</h6>
+        <p class="card-text">Ksh 500</p>
+        <p class="description d-none">Elegant earrings with semi-circular shapes that dangle gently.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr6.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Grass Buds Earrings</h6>
+        <p class="card-text">Ksh 6000</p>
+        <p class="description d-none">Handcrafted with grass-inspired metallic buds for a unique look.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr7.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Double Layered Necklace</h6>
+        <p class="card-text">Ksh 1000</p>
+        <p class="description d-none">Chic double-layer chain necklace perfect for layering fashion.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr8.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Whirl Bracelet</h6>
+        <p class="card-text">Ksh 850</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr9.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Solstice</h6>
+        <p class="card-text">Ksh 1200</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr10.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Aquamarine bracelet</h6>
+        <p class="card-text">Ksh 850</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr11.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Flower petal necklace</h6>
+        <p class="card-text">Ksh 850</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr12.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">White flower necklace</h6>
+        <p class="card-text">Ksh 950</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr13.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Chunky mixed color ring</h6>
+        <p class="card-text">Ksh 850</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr14.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Whirl Bracelet</h6>
+        <p class="card-text">Ksh 850</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr15.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Dew drop earings</h6>
+        <p class="card-text">Ksh 1200</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr16.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Luxe</h6>
+        <p class="card-text">Ksh 1000</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr17.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Bow necklace</h6>
+        <p class="card-text">Ksh 1200</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr18.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Dazzling dreams</h6>
+        <p class="card-text">Ksh 1200</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr19.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Lustrous elegance</h6>
+        <p class="card-text">Ksh 1100</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr20.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Star necklace</h6>
+        <p class="card-text">Ksh 1000</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr21.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Love charm bracelet</h6>
+        <p class="card-text">Ksh 950</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr22.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Polaris earings</h6>
+        <p class="card-text">Ksh 850</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr23.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">Whirl moon</h6>
+        <p class="card-text">Ksh 850</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+    <div class="col-md-3 mb-4"><div class="card product-card">
+      <img src="images/pr24.jpeg" class="card-img-top">
+      <div class="card-body text-center">
+        <h6 class="card-title">White butterfly</h6>
+        <p class="card-text">Ksh 950</p>
+        <p class="description d-none">A twirled design bracelet with intricate detail and elegance.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul id="cart-items" class="list-group mb-3"></ul>
+        <h5>Total: <span id="cart-total">Ksh 0.00</span></h5>
+        <div class="form-check mt-3">
+          <input type="checkbox" class="form-check-input" id="gift-wrap">
+          <label class="form-check-label" for="gift-wrap">🎁 Add Gift Wrap</label>
+        </div>
+        <textarea id="gift-message" class="form-control mt-2" placeholder="Write your gift message (optional)" rows="2"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="checkout-btn" class="btn btn-success">Order via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const updateCartUI = () => {
+    document.getElementById('cart-count').textContent = cart.length;
+    const cartList = document.getElementById('cart-items');
+    cartList.innerHTML = '';
+
+    let total = 0;
+    cart.forEach((item, i) => {
+      total += item.price * item.qty;
+      cartList.innerHTML += `
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between flex-wrap">
+            <div>
+              <strong>${item.title}</strong><br>
+              ${item.description}<br>
+              Ksh ${item.price.toFixed(2)} x 
+              <input type="number" min="1" value="${item.qty}" data-index="${i}" class="form-control d-inline-block" style="width: 60px;">
+              <br><img src="${item.image}" width="60" style="margin-top:5px; border-radius:5px;">
+            </div>
+            <button class="btn btn-sm btn-danger remove-btn mt-2" data-index="${i}">×</button>
+          </div>
+        </li>`;
+    });
+
+    document.getElementById('cart-total').textContent = 'Ksh ' + total.toFixed(2);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        const index = parseInt(e.target.dataset.index);
+        cart.splice(index, 1);
+        updateCartUI();
+      };
+    });
+
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+      input.onchange = (e) => {
+        const index = parseInt(e.target.dataset.index);
+        cart[index].qty = parseInt(e.target.value);
+        updateCartUI();
+      };
+    });
+  };
+
+  const showToast = () => {
+    const toastEl = document.getElementById('cart-toast');
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
+  };
+
+  document.querySelectorAll('.product-card .btn-primary').forEach(btn => {
+    btn.onclick = () => {
+      const card = btn.closest('.product-card');
+      const title = card.querySelector('.card-title').textContent;
+      const price = parseFloat(card.querySelector('.card-text').textContent.replace('Ksh', '').trim());
+      const image = card.querySelector('img').src;
+      const description = card.querySelector('.description').textContent.trim();
+      cart.push({ title, price, image, description, qty: 1 });
+      updateCartUI();
+      showToast();
+    };
+  });
+
+  document.getElementById('cart-btn').onclick = () => {
+    updateCartUI();
+    new bootstrap.Modal(document.getElementById('cart-modal')).show();
+  };
+
+  document.getElementById('checkout-btn').onclick = () => {
+    if (!cart.length) return;
+
+    let msg = "Hello! I'd like to order:\n\n";
+    cart.forEach(item => {
+      msg += `🛍️ ${item.title} (${item.qty}x) — Ksh ${(item.price * item.qty).toFixed(2)}\n📌 ${item.description}\n🖼️ ${item.image}\n\n`;
+    });
+
+    msg += `🧾 Total: Ksh ${cart.reduce((a, b) => a + b.price * b.qty, 0).toFixed(2)}\n`;
+
+    const wrap = document.getElementById('gift-wrap').checked;
+    const note = document.getElementById('gift-message').value.trim();
+
+    if (wrap) {
+      msg += "\n🎁 Gift wrap requested.\n";
+      if (note) msg += `📝 Message: "${note}"\n`;
+    }
+
+    const encodedMsg = encodeURIComponent(msg);
+    window.open(`https://wa.me/254707855073?text=${encodedMsg}`, '_blank');
+  };
+
+  updateCartUI();
+</script>
+<footer class="bg-dark text-white text-center py-3"><small>&copy; 2025 Design- Designed by Paps-designs 0763497422</small></footer>
+</body>
+</html>
