@@ -570,7 +570,9 @@ toast.show();
       msg += ` ${item.title} (${item.qty}x) — Ksh ${(item.price * item.qty).toFixed(2)}\n ${item.description}\n ${item.image}\n\n`;
     });
 
-    msg += ` Total: Ksh ${cart.reduce((a, b) => a + b.price * b.qty, 0).toFixed(2)}\n`;
+let total = cart.reduce((a, b) => a + b.price * b.qty, 0);
+if (wrap) total += 100;
+msg += ` Total: Ksh ${total.toFixed(2)}\n`;
 
     const wrap = document.getElementById('customize-message').checked;
     const note = document.getElementById('gift-message').value.trim();
