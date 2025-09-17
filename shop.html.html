@@ -502,6 +502,14 @@
     let total = 0;
     cart.forEach((item, i) => {
       total += item.price * item.qty;
+      const wrap = document.getElementById('Customize-message').checked;
+if (message) total += 100;
+      document.getElementById('Customize-message').onchange = () => {
+  updateCartUI();
+};
+
+
+document.getElementById('cart-total').textContent = 'Ksh ' + total.toFixed(2);
       cartList.innerHTML += `
         <li class="list-group-item">
           <div class="d-flex justify-content-between flex-wrap">
