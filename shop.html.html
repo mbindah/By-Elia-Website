@@ -481,7 +481,7 @@
           <input type="checkbox" class="form-check-input" id="gift-wrap">
           <label class="form-check-label" for="gift-wrap">Customize Message (+100)</label>
         </div>
-        <textarea id="gift-message" class="form-control mt-2" placeholder="Write your gift message (optional)" rows="2"></textarea>
+        <textarea id="gift-message" class="form-control mt-2" placeholder="Customize your gift message (optional)" rows="2"></textarea>
       </div>
       <div class="modal-footer">
         <button id="checkout-btn" class="btn btn-success">Order via WhatsApp</button>
@@ -539,8 +539,8 @@
 
   const showToast = () => {
     const toastEl = document.getElementById('cart-toast');
-    const toast = new bootstrap.Toast(toastEl);
-    toast.show();
+   const toast = new bootstrap.Toast(toastEl, { delay: 1000 });
+toast.show();
   };
 
   document.querySelectorAll('.product-card .btn-primary').forEach(btn => {
