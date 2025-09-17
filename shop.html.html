@@ -562,29 +562,28 @@ toast.show();
     new bootstrap.Modal(document.getElementById('cart-modal')).show();
   };
 
-  document.getElementById('checkout-btn').onclick = () => {
-    if (!cart.length) return;
+  ocument.getElementById('checkout-btn').onclick = () => {
+  if (!cart.length) return;
 
-    let msg = "Hello! I'd like to order:\n\n";
-    cart.forEach(item => {
-      msg += ` ${item.title} (${item.qty}x) — Ksh ${(item.price * item.qty).toFixed(2)}\n ${item.description}\n ${item.image}\n\n`;
-    });
-
-let total = cart.reduce((a, b) => a + b.price * b.qty, 0);
-if (wrap) total += 100;
-msg += ` Total: Ksh ${total.toFixed(2)}\n`;
-
+  let msg = "Hello! I'd like to order:\n\n";
+  cart.forEach(item => {
+    msg += ` ${item.title} (${item.qty}x) — Ksh ${(item.price * item.qty).toFixed(2)}\n ${item.description}\n ${item.image}\n\n`;
+  });
     const wrap = document.getElementById('customize-message').checked;
     const note = document.getElementById('gift-message').value.trim();
 
-    if (wrap) {
-      msg += "\n Customized message.\n";
-      if (note) msg += ` Message: "${note}"\n`;
-    }
+   let total = cart.reduce((a, b) => a + b.price * b.qty, 0);
+  if (wrap) total += 100;
+  msg += ` Total: Ksh ${total.toFixed(2)}\n`;
 
-    const encodedMsg = encodeURIComponent(msg);
-    window.open(`https://wa.me/254707855073?text=${encodedMsg}`, '_blank');
-  };
+  if (wrap) {
+    msg += "\nCustomized message.\n";
+    if (note) msg += `Message: "${note}"\n`;
+  }
+
+  const encodedMsg = encodeURIComponent(msg);
+  window.open(`https://wa.me/254707855073?text=${encodedMsg}`, '_blank');
+};
 
   updateCartUI();
 </script>
