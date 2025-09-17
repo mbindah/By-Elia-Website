@@ -582,6 +582,10 @@ toast.show();
 
     const encodedMsg = encodeURIComponent(msg);
     window.open(`https://wa.me/254707855073?text=${encodedMsg}`, '_blank');
+     cart = [];
+  localStorage.removeItem('cart');
+  updateCartUI();
+
   };
 
   updateCartUI();
