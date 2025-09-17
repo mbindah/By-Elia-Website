@@ -579,8 +579,8 @@ toast.show();
 
     msg += ` Total: Ksh ${cart.reduce((a, b) => a + b.price * b.qty, 0).toFixed(2)}\n`;
 
-    const wrap = document.getElementById('gift-wrap').checked;
-    const note = document.getElementById('gift-message').value.trim();
+    const wrap = document.getElementById('Customize-message').checked;
+    const note = document.getElementById('Customized-message').value.trim();
 
     if (wrap) {
       msg += "\n Customized message:.\n";
