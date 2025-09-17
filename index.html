@@ -218,11 +218,15 @@ Each piece is 18-karat gold-plated, hypoallergenic, and waterproof, made to be l
     });
   }
 
-  function showToast() {
-    const toastEl = document.getElementById('cart-toast');
-    const toast = new bootstrap.Toast(toastEl);
-    toast.show();
-  }
+ function showToast() {
+  const toastEl = document.getElementById('cart-toast');
+  const toast = new bootstrap.Toast(toastEl, {
+    delay: 2000,  // 2000ms = 2 seconds
+    autohide: true
+  });
+  toast.show();
+}
+
 
   // Add to Cart Buttons
   document.querySelectorAll('.product-card .btn').forEach(btn => {
